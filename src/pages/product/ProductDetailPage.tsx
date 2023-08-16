@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'; // Import useState
-import { useGetAllProductDetailsQuery } from '../../service/product/index';
-import Card from '../../components/Card';
+import React, { useEffect, useState } from "react"; // Import useState
+import { useGetAllProductDetailsQuery } from "../../service/product/index";
+import Card from "../../components/Card";
+import { useParams } from "react-router-dom";
 
 interface IProductDEtail {
   id: number;
@@ -14,8 +15,8 @@ interface IProductDEtail {
 
 const ProductDetailPage = () => {
   const [product, setProduct] = useState<IProductDEtail | null>(null); // Use useState
-
-  const { data, error } = useGetAllProductDetailsQuery(2);
+  const { productID } = useParams();
+  const { data, error } = useGetAllProductDetailsQuery(`${productID}`);
 
   useEffect(() => {
     if (data) {
