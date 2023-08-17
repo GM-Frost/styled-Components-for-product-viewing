@@ -48,7 +48,7 @@ const Card: React.FC<CardProps> = ({
       <CardDiv>
         <Image src={image} alt={title} onClick={openModal} />
         <CardTitle>{title}</CardTitle>
-
+        <CardText>$&nbsp;{price}</CardText>
         <CardActions>
           <Button>
             <a href={`productdetails/${id}`}>View Product</a>
