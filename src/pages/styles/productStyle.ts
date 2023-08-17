@@ -29,7 +29,7 @@ export const Image = styled.img`
   max-width: 100%;
   height: 100%;
   border-radius: 0.5rem;
-  object-fit: cover;
+  object-fit: fit;
   cursor: pointer;
 `;
 
@@ -40,7 +40,8 @@ export const CardTitle = styled.h2`
 
 export const CardText = styled.p`
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;.
+  color: #d5987c;
 `;
 
 export const CardActions = styled.div`
@@ -49,7 +50,7 @@ export const CardActions = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #007bff;
+  background-color: teal;
   color: white;
   display: flex;
   border: none;
@@ -62,5 +63,4 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   left: 50%;
-  transform: translateX(-50%);
 `;
