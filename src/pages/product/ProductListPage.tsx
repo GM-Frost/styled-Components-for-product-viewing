@@ -1,5 +1,6 @@
 import Card from "../../components/Card";
 import { useGetAllProductsQuery } from "../../service/product/index";
+import { ProductStyleMain } from "../styles/productStyle";
 
 interface IProduct {
   id: number;
@@ -15,7 +16,7 @@ const ProductListPage = () => {
   const { data } = useGetAllProductsQuery();
 
   return (
-    <div>
+    <ProductStyleMain>
       {data?.map((product: IProduct) => (
         <div key={product.id}>
           <Card
@@ -24,14 +25,11 @@ const ProductListPage = () => {
             description={product.description}
             category={product.category}
             price={product.price}
+            id={product.id}
           />
-
-          <button type="button">
-            <a href={`productdetails/${product.id}`}>View Product</a>
-          </button>
         </div>
       ))}
-    </div>
+    </ProductStyleMain>
   );
 };
 
